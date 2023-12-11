@@ -2,6 +2,7 @@ import React from 'react';
 import css from './Feedback.module.css';
 import Statistics from 'components/Statistics/Statistics';
 import FeedbackOptions from 'components/FeedbackOptions/FeedbackOptions';
+import Section from 'components/Section/Section';
 
 class FeedbackButtons extends React.Component {
   state = {
@@ -39,20 +40,22 @@ class FeedbackButtons extends React.Component {
   render() {
     return (
       <div className={css.feedback}>
-        <h1 className={css['feedback-title']}>Feedback</h1>
-        <FeedbackOptions
-          options={Object.keys(this.state)}
-          onLeaveFeedback={this.handleIncrement}
-        />
-        <h2 className={css.statistics}>Statistics</h2>
+        <Section title="Feedback">
+          <FeedbackOptions
+            options={Object.keys(this.state)}
+            onLeaveFeedback={this.handleIncrement}
+          />
+        </Section>
 
-        <Statistics
-          good={this.state.good}
-          neutral={this.state.neutral}
-          bad={this.state.bad}
-          total={this.countTotalFeedback()}
-          positivePercentage={this.countPositiveFeedbackPercentage()}
-        />
+        <Section title="Statistics">
+          <Statistics
+            good={this.state.good}
+            neutral={this.state.neutral}
+            bad={this.state.bad}
+            total={this.countTotalFeedback()}
+            positivePercentage={this.countPositiveFeedbackPercentage()}
+          />
+        </Section>
       </div>
     );
   }
