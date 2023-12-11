@@ -1,6 +1,7 @@
 import React from 'react';
 import css from './Feedback.module.css';
 import Statistics from 'components/Statistics/Statistics';
+import FeedbackOptions from 'components/FeedbackOptions/FeedbackOptions';
 
 class FeedbackButtons extends React.Component {
   state = {
@@ -39,15 +40,10 @@ class FeedbackButtons extends React.Component {
     return (
       <div className={css.feedback}>
         <h1 className={css['feedback-title']}>Feedback</h1>
-        <button type="button" onClick={() => this.handleIncrement('good')}>
-          Good
-        </button>
-        <button type="button" onClick={() => this.handleIncrement('neutral')}>
-          Neutral
-        </button>
-        <button type="button" onClick={() => this.handleIncrement('bad')}>
-          Bad
-        </button>
+        <FeedbackOptions
+          options={Object.keys(this.state)}
+          onLeaveFeedback={this.handleIncrement}
+        />
         <h2 className={css.statistics}>Statistics</h2>
 
         <Statistics
