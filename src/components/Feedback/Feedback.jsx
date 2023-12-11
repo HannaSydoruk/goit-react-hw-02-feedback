@@ -1,5 +1,6 @@
 import React from 'react';
 import css from './Feedback.module.css';
+import Statistics from 'components/Statistics/Statistics';
 
 class FeedbackButtons extends React.Component {
   state = {
@@ -30,8 +31,8 @@ class FeedbackButtons extends React.Component {
       return 0;
     }
 
-    const positive = Math.round((good / total) * 100);
-    return positive;
+    const positivePercentage = Math.round((good / total) * 100);
+    return positivePercentage;
   };
 
   render() {
@@ -48,24 +49,14 @@ class FeedbackButtons extends React.Component {
           Bad
         </button>
         <h2 className={css.statistics}>Statistics</h2>
-        <p className={css.rate}>
-          Good: <span className={css.value}>{this.state.good}</span>
-        </p>
-        <p className={css.rate}>
-          Neutral: <span className={css.value}>{this.state.neutral}</span>
-        </p>
-        <p className={css.rate}>
-          Bad: <span className={css.value}>{this.state.bad}</span>
-        </p>
-        <p className={css.rate}>
-          Total: <span className={css.value}>{this.countTotalFeedback()}</span>
-        </p>
-        <p className={css.rate}>
-          Positive feedback:{' '}
-          <span className={css.value}>
-            {this.countPositiveFeedbackPercentage()}%
-          </span>
-        </p>
+
+        <Statistics
+          good={this.state.good}
+          neutral={this.state.neutral}
+          bad={this.state.bad}
+          total={this.countTotalFeedback()}
+          positivePercentage={this.countPositiveFeedbackPercentage()}
+        />
       </div>
     );
   }
