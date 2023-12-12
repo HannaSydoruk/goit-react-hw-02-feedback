@@ -1,5 +1,6 @@
-import React from 'react';
-class FeedbackOptions extends React.Component {
+import { Component } from 'react';
+
+class FeedbackOptions extends Component {
   render() {
     const { options, onLeaveFeedback } = this.props;
     return (

@@ -1,7 +1,7 @@
-import React from 'react';
+import { Component } from 'react';
 import css from './Section.module.css';
 
-class Section extends React.Component {
+class Section extends Component {
   render() {
     const { title, children } = this.props;
 

@@ -1,7 +1,7 @@
-import React from 'react';
+import { Component } from 'react';
 import css from './Statistics.module.css';
 
-class Statistics extends React.Component {
+class Statistics extends Component {
   render() {
     const { good, neutral, bad, total, positivePercentage } = this.props;
     return (
