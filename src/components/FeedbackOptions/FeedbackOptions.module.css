@@ -1,0 +1,16 @@
+.button {
+  background: beige;
+  border: solid 1px darkred;
+  color: darkred;
+  border-radius: 30px;
+  font-weight: 500;
+  width: 100px;
+  height: 30px;
+  margin-right: 20px;
+  text-transform: capitalize;
+}
+
+.button:hover {
+  border: solid 2px darkred;
+  font-weight: 600;
+}

@@ -13,7 +13,7 @@ export class App extends Component {
 
   render() {
     return (
-      <div>
+      <div className="basic">
         <Section title="Feedback">
           <FeedbackOptions
             options={Object.keys(this.state)}

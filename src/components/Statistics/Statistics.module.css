@@ -1,0 +1,13 @@
+.value {
+  font-weight: 700;
+}
+
+.rate {
+  display: flex;
+  width: 180px;
+  justify-content: space-between;
+}
+
+.rate.accent-rate {
+  font-weight: 600;
+}

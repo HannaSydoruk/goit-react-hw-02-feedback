@@ -15,10 +15,10 @@ class Statistics extends Component {
         <p className={css.rate}>
           Bad: <span className={css.value}>{bad}</span>
         </p>
-        <p className={css.rate}>
+        <p className={`${css.rate} ${css['accent-rate']}`}>
           Total: <span className={css.value}>{total}</span>
         </p>
-        <p className={css.rate}>
+        <p className={`${css.rate} ${css['accent-rate']}`}>
           Positive feedback:{' '}
           <span className={css.value}>{positivePercentage}%</span>
         </p>

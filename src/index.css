@@ -13,3 +13,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.basic {
+  margin: 0 auto;
+  padding: 50px;
+  color: darkred;
+}
